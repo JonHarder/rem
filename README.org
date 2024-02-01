@@ -1,0 +1,27 @@
+* Rem
+The unobtrusive, intuative memory augmentation tool for software projects
+
+** How it works
+  *Rem* recognizes you work on different projects and codebases. When
+   you tell it to remember something, it remembers where you were when
+   you wrote it down, what files you were working on (what link is in
+   your clipboard?)
+
+   It does this by storing a file in the root of the project (looking
+   for a ~.git/~ directory - or other project-marking files). You can
+   commit this file with the project if you'd like others to have
+   these context sensative notes, or ignore it if you'd like them to
+   remain your own alone.
+
+** Invoking ~rem~
+   #+begin_src sh
+     rem 'refactor this_func since other_func handles this more robustly'
+   #+end_src
+
+** What makes a project?
+    The following files tell =rem= that this directory marks the root
+    of a project:
+
+    - ~.git/~
+    - ~.project~
+    - *TODO* others? mercerial? other VCs?
