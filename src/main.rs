@@ -15,9 +15,7 @@ struct RemApp {
 
 fn main() -> std::io::Result<()> {
     let args = RemApp::parse();
-    let reminder = reminder::Reminder::new(&args.item);
-    println!("{}", serde_json::to_string(&reminder.context)?);
-    // println!("{:?}", args);
-    // println!("{:?}", reminder);
+    let reminder = reminder::Reminder::try_new(&args.item)?;
+    println!("{:?}", reminder);
     Ok(())
 }

@@ -1,4 +1,5 @@
 use crate::context;
+use std::io;
 
 #[derive(Debug)]
 pub struct Reminder {
@@ -7,10 +8,10 @@ pub struct Reminder {
 }
 
 impl Reminder {
-    pub fn new(text: &str) -> Self {
-        Reminder {
+    pub fn try_new(text: &str) -> io::Result<Self> {
+        Ok(Reminder {
             text: text.to_string(),
-            context: context::Context::new(),
-        }
+            context: context::Context::from_current_dir()?,
+        })
     }
 }
