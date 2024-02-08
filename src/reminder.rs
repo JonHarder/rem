@@ -7,10 +7,12 @@ pub struct Reminder {
     pub context: context::Context,
 }
 
-impl Reminder {
-    pub fn try_new(text: &str) -> io::Result<Self> {
+impl TryFrom<&str> for Reminder {
+    type Error = io::Error;
+
+    fn try_from(value: &str) -> Result<Self, Self::Error> {
         Ok(Reminder {
-            text: text.to_string(),
+            text: value.to_string(),
             context: context::Context::from_current_dir()?,
         })
     }

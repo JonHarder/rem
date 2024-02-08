@@ -25,3 +25,7 @@ The unobtrusive, intuative memory augmentation tool for software projects
     - ~.git/~
     - ~.project~
     - *TODO* others? mercerial? other VCs?
+
+** Roadmap
+    - Save to central file (~~/.rem~?)
+    - Project detection
